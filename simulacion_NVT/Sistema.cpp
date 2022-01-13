@@ -1,22 +1,27 @@
-#include "sistema.h"
+#include "Sistema.h"
+
+Sistema::Sistema()//constructor vacio
+{
+  
+}
 
 Sistema::Sistema(int num_k, int N, float rho, float E_t)
 {
 	//inicializamos las constantes del sistema
-    this->N = N;
+  this->N = N;
 	this->rho = rho;
-    V = N / rho;
-    L = std::cbrt(V);
-    double a = L / num_k;
-    this->E_t = E_t;
-    rc = L / 2;
-    rc2 = rc * rc;
-    //inicializamos la energia cinetica y potencial a 0 de forma provisional
-    E_p = 0;
-    E_cin = 0;
-    dphi = 0;
-    d2phi = 0;
-	//inicializamos los pointers de r, v y a a arrays de tamaño N
+  V = N / rho;
+  L = std::cbrt(V);
+  double a = L / num_k;
+  this->E_t = E_t;
+  rc = L / 2;
+  rc2 = rc * rc;
+  //inicializamos la energia cinetica y potencial a 0 de forma provisional
+  E_p = 0;
+  E_cin = 0;
+  dphi = 0;
+  d2phi = 0;
+	//inicializamos los pointers de r, v y a a arrays de tamaï¿½o N
 	rx = new double[N];
 	ry = new double[N];
 	rz = new double[N];
@@ -29,8 +34,8 @@ Sistema::Sistema(int num_k, int N, float rho, float E_t)
 	ay = new double[N];
 	az = new double[N];
 
-    colocar_red(num_k, a);//colocamos ya la situacion inicial puesto que si se quiere leer una externa ya hay un constructor para eso
-    
+  colocar_red(num_k, a);//colocamos ya la situacion inicial puesto que si se quiere leer una externa ya hay un constructor para eso
+
 }
 
 Sistema::Sistema(std::string ascii_filename)
@@ -48,7 +53,7 @@ Sistema::Sistema(std::string ascii_filename)
     this->rc2 = rc * rc;
     this->V = L * L * L;
 
-    //inicializamos los pointers de r, v y a a arrays de tamaño N
+    //inicializamos los pointers de r, v y a a arrays de tamaï¿½o N
     rx = new double[N];
     ry = new double[N];
     rz = new double[N];
@@ -248,7 +253,7 @@ void Sistema::stab_verlet(int n_pasos, float dt, int save_rate, std::string ener
     std::ofstream velocity_output(vel_filename, std::ios::binary);
     progress_bar bar(process_name, n_pasos);
     int array_size = N * sizeof(double);
-    
+
     for (int j = 0; j < n_pasos; j++)
     {
         velocity_verlet(dt);
@@ -327,7 +332,7 @@ void Sistema::run_verlet(int n_pasos, float dt, int save_rate, std::string resul
 
     energy_output.close();
     bin_output.close();
-    
+
 
     std::ofstream results_output(results_file, std::ios::out | std::ios::app);
     //escribimos los resultadosa un archivo de forma que sea facil de abrir con numpy e interpretar a simple vista

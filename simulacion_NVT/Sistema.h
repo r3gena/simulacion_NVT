@@ -3,6 +3,7 @@
 #include <random>
 #include <fstream>
 #include <iomanip>
+#include <string>
 #include "potenciales.h"
 #include "progress_bar.h"
 
@@ -14,10 +15,11 @@ public:
 	float rho, V, L, rc, rc2;
 	double E_t, E_cin, E_p, dphi, d2phi;
 
-	Sistema(int num_k, int N, float rho, float E_t);//constructor de la clase, inicializa variables del sistema y crea los vectores del tamaño indicado
+	Sistema(int num_k, int N, float rho, float E_t);//constructor de la clase, inicializa variables del sistema y crea los vectores del tamaï¿½o indicado
 	Sistema(std::string ascii_filename);//extrae los parametros del archivo indicado y busca el archivo binario para exxtraer los vectores
+	Sistema();
 	~Sistema();//destructor, se asegura de eliminar los vectores para no tener fugas de memoria
-	
+
 	void imprimir_energias();
 	void exportar_datos(std::string ascii_filename, std::string bin_filename);//exporta los parametros del sistema (energias, densidad, numero de particulas...) a un archivo de texto
 	void exportar_datos(std::string ascii_filename, std::string bin_filename, float dt, int n_pasos);
@@ -35,7 +37,7 @@ protected:
 
 	void velocity_verlet(float dt);
 
-	//posiciones, velocidades y aceleraciones, creados como pionters porque no se pueden definir arrays sin tamaño
+	//posiciones, velocidades y aceleraciones, creados como pionters porque no se pueden definir arrays sin tamaï¿½o
 	double *rx, *ry, *rz;
 	double *vx, *vy, *vz;
 	double *ax, *ay, *az;

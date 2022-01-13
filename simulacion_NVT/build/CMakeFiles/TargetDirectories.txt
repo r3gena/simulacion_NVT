@@ -1,0 +1,4 @@
+/home/pedro/github/simulacion_NVT/simulacion_NVT/build/CMakeFiles/rebuild_cache.dir
+/home/pedro/github/simulacion_NVT/simulacion_NVT/build/CMakeFiles/NVT.dir
+/home/pedro/github/simulacion_NVT/simulacion_NVT/build/CMakeFiles/edit_cache.dir
+/home/pedro/github/simulacion_NVT/simulacion_NVT/build/CMakeFiles/applib.dir

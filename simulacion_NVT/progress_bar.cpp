@@ -2,7 +2,7 @@
 
 progress_bar::progress_bar(std::string name, int max_steps)
 {
-	this->max_steps = max_steps;
+	this->max_steps = max_steps-1;
 	progress = 0;
 	previous_progress = 0;
 	process_name = name;

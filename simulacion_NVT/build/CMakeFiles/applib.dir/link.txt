@@ -1,0 +1,2 @@
+/usr/bin/ar qc libapplib.a CMakeFiles/applib.dir/progress_bar.cpp.o CMakeFiles/applib.dir/potenciales.cpp.o CMakeFiles/applib.dir/Sistema_NVT.cpp.o CMakeFiles/applib.dir/Sistema.cpp.o
+/usr/bin/ranlib libapplib.a

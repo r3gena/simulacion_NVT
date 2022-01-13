@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/NVT.dir/simulacion_NVT.cpp.o -o NVT  libapplib.a 

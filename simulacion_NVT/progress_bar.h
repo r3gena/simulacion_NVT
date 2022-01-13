@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cmath>
 
 class progress_bar
 {
@@ -14,4 +15,3 @@ public:
 
 	void update(int current_step);
 };
-

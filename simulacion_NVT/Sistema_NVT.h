@@ -1,13 +1,14 @@
 #pragma once
 #include "Sistema.h"
+#include <ostream>
 class Sistema_NVT :
     public Sistema
 {
 public:
     double MT;//masa del foco termico
-    double T;//temperatura teórica que tiene que dar, dato del sistema y la media tiene que salir similar a esto
+    double T;//temperatura teï¿½rica que tiene que dar, dato del sistema y la media tiene que salir similar a esto
 
-    Sistema_NVT(std::string originfile, double T, double MT);
+    Sistema_NVT(std::string filename);
 
     ~Sistema_NVT();
 
@@ -33,4 +34,3 @@ private:
     void gear4(float dt, double deltax[], double deltay[], double deltaz[]);
 
 };
-
